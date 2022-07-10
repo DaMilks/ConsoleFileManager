@@ -2,7 +2,7 @@
 #include "FIleManager.h"
 
 using namespace std;
-struct buffer
+struct boofer
 {
     path Path;
     bool is_folder;
@@ -10,7 +10,7 @@ struct buffer
 
 class Menu {
 private:
-    buffer copybuffer;
+    boofer copyboofer;
     list<MyObject*> listob;
     path nowPath;
 
@@ -45,7 +45,7 @@ private:
     list<string> search(string mask);
 
     void printList(list<string>);
-
+    
     void createFolder(string foldername);
 
 public:

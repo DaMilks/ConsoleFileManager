@@ -108,19 +108,19 @@ void Menu::openF(int number)
 void Menu::Copy(int number) {
     list<MyObject*>::iterator itr = listob.begin();
     advance(itr, number - 1);
-    copybuffer.is_folder = (**itr).i_folder();
-    copybuffer.Path = (**itr).getPath();
+    copyboofer.is_folder = (**itr).i_folder();
+    copyboofer.Path = (**itr).getPath();
 }
 //вставить
 void Menu::insert() {
     path p = nowPath;
     const auto copyOptions = copy_options::overwrite_existing | copy_options::recursive;
-    if (copybuffer.is_folder)
+    if (copyboofer.is_folder)
     {
-        p /= copybuffer.Path.filename();
+        p /= copyboofer.Path.filename();
         create_directory(p);
     }
-    copy(copybuffer.Path, p, copyOptions);
+    copy(copyboofer.Path, p, copyOptions);
     listob.clear();
     initList();
 }
@@ -174,7 +174,7 @@ void Menu::Myrename(int number, string newname)
 //вывод справки по командам
 void Menu::printHelp()
 {
-    cout << "copy <number> - copy file or folder in custom buffer" << endl
+    cout << "copy <number> - copy file or folder in custom boofer" << endl
         << "open <number> - open file or folder" << endl
         << "delete <number> - delete file or folder" << endl
         << "insert obj - pate file or folder in current folder" << endl
