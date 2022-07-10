@@ -1,9 +1,6 @@
-﻿#include <iostream>
+﻿
 #include "FIleManager.h";
 #include "Menu.h";
-
-
-
 
 int main()
 {

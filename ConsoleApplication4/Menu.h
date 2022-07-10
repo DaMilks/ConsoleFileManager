@@ -40,6 +40,14 @@ private:
 
     void createFile(string filename);
 
+    bool match(const char* s, const char* p);
+
+    list<string> search(string mask);
+
+    void printList(list<string>);
+
+    void createFolder(string foldername);
+
 public:
     Menu();
     void mainMenu();
